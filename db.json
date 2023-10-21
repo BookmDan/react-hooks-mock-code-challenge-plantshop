@@ -41,6 +41,42 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "another_plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 12,
+      "id": 8
+    },
+    {
+      "name": "another_plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 11,
+      "id": 9
+    },
+    {
+      "name": "another_plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 9,
+      "id": 10
+    },
+    {
+      "name": "another_plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 9,
+      "id": 11
+    },
+    {
+      "name": "another_plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 9,
+      "id": 12
+    },
+    {
+      "name": "Plant_NFT",
+      "image": "https://i.seadn.io/gae/pVYWCnOgb0nGRwnGYPzoFxIkmyAYpBYYjOPQPZWaU5ssLJjtDlX6e8UytI7HZSU1zN-16XgBU2KGHR2WCWl1LhAyj3FT2aKBthc2?auto=format&dpr=1&w=1000",
+      "price": 120,
+      "id": 13
     }
   ]
 }

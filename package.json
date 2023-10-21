@@ -13,6 +13,7 @@
     "server": "json-server --watch db.json -p 6001",
     "test": "jest"
   },
+  "proxy": "http://localhost:6001",
   "eslintConfig": {
     "extends": [
       "react-app",

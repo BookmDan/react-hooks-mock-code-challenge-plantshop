@@ -2,10 +2,22 @@ import React, {useState} from "react";
 
 function PlantCard({ plant }) {
   const [isInStock, setIsInStock] = useState(true)
-  const { name, image, price } = plant
+  const { name, image, price, id } = plant
   
   function handleToggleInStock() {
     setIsInStock(!isInStock)
+  }
+
+  function handleDelete() {
+    // console.log(id)
+    fetch(`http://localhost:6001/plants/${id}`, {
+      method: "DELETE"
+    })
+    // .then(r => r.json())
+    //   .then((emptyObj)=> {
+    //   console.log(emptyObj)
+    // }
+    //update state
   }
 
   return (
@@ -18,6 +30,7 @@ function PlantCard({ plant }) {
       ) : (
         <button onClick={() => setIsInStock(true)}>Out of Stock</button>
       )}
+      <button onClick={ handleDelete}>Delete</button>
     </li>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants, searchTerm }) {
+function PlantList({ plants, searchTerm, onRemovePlant, onUpdatePlant}) {
   if (!plants || plants.length === 0) {
     return <div>No plants available.</div>;
   }
@@ -14,7 +14,12 @@ function PlantList({ plants, searchTerm }) {
   console.log(filteredPlants)
   
   const plantCards = filteredPlants.map((plant) => {
-    return <PlantCard key={plant.id}  plant={plant}  />
+    return <PlantCard
+      key={plant.id}
+      plant={plant} 
+      onRemovePlant={onRemovePlant}
+      onUpdatePlant={onUpdatePlant}
+      />
   })
   return (
     <ul className="cards">{plantCards}</ul>

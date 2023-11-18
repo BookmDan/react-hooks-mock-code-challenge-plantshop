@@ -2,11 +2,13 @@ import React, {useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
+import Cart from './Cart'
 
 function PlantPage() {
   const [plants, setPlants] = useState([])
   const[searchTerm, setSearchTerm] = useState("")
   console.log(plants);
+  const [cartItems, setCartItems]= useState([])
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -16,6 +18,7 @@ function PlantPage() {
         // console.log(plantsArray)
       })
   }, [])
+
 
   //sending newPlant from NewPlantForm
   //1. define callback function
@@ -50,6 +53,12 @@ function PlantPage() {
   function handleUpdateSearch(newSearch) {
     setSearchTerm(newSearch)
   }
+
+  function handleAddToCart(selectedPlant) {
+    // Update the cart items state with the selected plant
+    setCartItems([...cartItems, selectedPlant]);
+  }
+
       // pass callback as a prop
   return (
     <main>
@@ -60,7 +69,9 @@ function PlantPage() {
         searchTerm={searchTerm}
         onRemovePlant={handleRemovePlant}
         onUpdatePlant={handleUpdatePlant}
+        onAddToCart={handleAddToCart} 
       />
+      <Cart cartItems={cartItems}/>
     </main>
   );
 }

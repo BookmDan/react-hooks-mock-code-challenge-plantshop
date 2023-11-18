@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function PlantCard({ plant, onRemovePlant, onUpdatePlant }) {
+function PlantCard({ plant, onRemovePlant, onUpdatePlant, onAddToCart}) {
   const { name, image, price, id } = plant
 
   const [isInStock, setIsInStock] = useState(true)
@@ -25,6 +25,12 @@ function PlantCard({ plant, onRemovePlant, onUpdatePlant }) {
       // console.log(updatedPlant)
     })
   }
+
+  function handleAddToCart() {
+    // Update the cart items state with the selected plant
+    onAddToCart(plant)
+  }
+
 
   function handleDelete() {
     // console.log(id)
@@ -60,6 +66,7 @@ function PlantCard({ plant, onRemovePlant, onUpdatePlant }) {
           />
         <button type="submit">Update Price </button>
       </form>
+      <button onClick={handleAddToCart}>Add to Cart</button>
     </li>
   );
 }
